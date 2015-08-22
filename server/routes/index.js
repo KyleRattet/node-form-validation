@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var puppyArray = [];
-var idArray = [];
+// var idArray = [];
 
 //on submit, route to puppynew form
 router.get('/', function(req, res, next) {
@@ -19,16 +19,18 @@ router.post('/puppy/new', function(req, res, next) {
 
 //puppy table of all puppies
 router.post('/puppies', function(req, res, next) {
-  console.log(req.body);
-  puppyArray.push(req.body.name);
-  idArray.push(req.body.id);
+  //push form data into arrays to display
+  puppyArray.push(req.body);
+  // idArray.push(req.body.id);
   console.log(puppyArray);
-  console.log(idArray);
+  // console.log(idArray);
 
+  //render puppies html
   res.render('puppies', {
-    title: 'Puppy Table',
-    name: puppyArray,
-    id: idArray });
+    title: 'Showing Puppies',
+    puppyArray: puppyArray,
+    // idArray: idArray
+  });
 
 });
 

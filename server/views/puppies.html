@@ -9,8 +9,39 @@
 
     <h1>{{ title }}</h1>
 
-    <p>{{name}}</p>
-    <p>{{id}}</p>
+    <p><em>The puppy was saved successfully</em></p>
+<!--
+    <table border='1' style="width:50%">
+      <tr>
+        <th>Puppy Name</th>
+        <th>Puppy ID</th>
+      </tr>
+
+
+      {% for puppy in puppyArray %}
+      <td>{{puppy.name}}</td>
+      {% endfor %}
+      {% for puppy in idArray %}
+      <td>{{puppy.id}}</td>
+        {% endfor %} -->
+
+
+
+
+
+
+
+
+
+    <!-- </table> -->
+
+    {% for puppy in puppyArray %}
+          {% if loop.first %}<ol>{% endif %}
+          <li><strong>Puppy Name: </strong>{{ puppy.name }} <strong>Puppy ID : </strong>{{ puppy.id}}</li>
+          {% if loop.last %}</ol>{% endif %}
+        {% endfor %}
+
+
 
 
   </div>
