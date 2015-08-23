@@ -9,38 +9,30 @@
 
     <h1>{{ title }}</h1>
 
-    <p><em>The person was saved successfully</em></p>
-<!--
-    <table border='1' style="width:50%">
+    <p class='green'><em>The person was saved successfully</em></p>
+
+    <table  class='table table-striped'border='1' style="width:50%">
       <tr>
-        <th>Puppy Name</th>
-        <th>Puppy ID</th>
+        <th>Name</th>
+        <th>Hobby</th>
       </tr>
 
 
-      {% for puppy in puppyArray %}
-      <td>{{puppy.name}}</td>
+      {% for people in peopleArray %}
+      <tr>
+      <td>{{people.name}}</td>
+      <td>{{people.hobby}}</td>
+      </tr>
       {% endfor %}
-      {% for puppy in idArray %}
-      <td>{{puppy.id}}</td>
-        {% endfor %} -->
 
+    </table>
 
-
-
-
-
-
-
-
-    <!-- </table> -->
-
-    {% for people in peopleArray %}
+<!--     {% for people in peopleArray %}
           {% if loop.first %}<ol>{% endif %}
           <li><strong>Person Name: </strong>{{ people.name }} <strong>Person Hobby : </strong>{{ people.hobby}}</li>
           {% if loop.last %}</ol>{% endif %}
         {% endfor %}
-
+ -->
 
 
 

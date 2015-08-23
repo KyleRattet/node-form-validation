@@ -47,6 +47,7 @@ router.post('/puppies', function(req, res, next) {
 
 //create new person form, take input and render to people table
 router.post('/people/new', function(req, res, next) {
+
   res.render('personnew', { title: 'Add A Person' });
   // console.log(req.body);
   // puppyArray.push(req.body.name);
@@ -55,6 +56,7 @@ router.post('/people/new', function(req, res, next) {
 
 //people list of all people
 router.post('/people', function(req, res, next) {
+
   //push form data into arrays to display
   peopleArray.push(req.body);
   // idArray.push(req.body.id);
