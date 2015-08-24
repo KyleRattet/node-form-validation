@@ -27,10 +27,8 @@ router.post('/puppy/new', function(req, res, next) {
 //puppy list of all puppies
 router.post('/puppies', function(req, res, next) {
 
-  console.log(req.body.name);
-  console.log(req.body.id);
   var errors = puppyValidationCheck(req.body.name, req.body.id);
-  console.log(errors);
+
   //push form data into arrays to display
 
   if (errors.length > 0) {
@@ -75,6 +73,16 @@ router.post('/people/new', function(req, res, next) {
 //people list of all people
 router.post('/people', function(req, res, next) {
 
+
+  var errors = puppyValidationCheck(req.body.name, req.body.hobby);
+  if (errors.length > 0) {
+
+    res.render('personnew', {
+      title: 'Add A Person',
+      errors : errors
+    });
+
+  } else {
   //push form data into arrays to display
   peopleArray.push(req.body);
   // idArray.push(req.body.id);
@@ -88,6 +96,8 @@ router.post('/people', function(req, res, next) {
     success: "The person was saved successfully.",
     // idArray: idArray
   });
+
+  }
 
 });
 
